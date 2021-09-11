@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>ToolBar戻るボタンの実装(ページ遷移)サンプル</title>
+    <title>Footer固定のサンプル</title>
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
@@ -14,7 +14,10 @@
 <!-- TOPページ. -->
 <div data-role="page" id="index">
     <div data-role="header" style="text-align: center" data-theme="b">TOPページ</div>
-    <a href="#info" class="ui-btn ui-corner-all ui-shadow ui-mini">Go To InfoPage(Link button)</a>
+    <div data-role="content">
+        <a href="#info" class="ui-btn ui-corner-all ui-shadow ui-mini">Go To InfoPage(Link button)</a>
+    </div>
+    <div data-role="footer" data-theme="b" data-position="fixed" style="text-align: center">フッター1</div>
 </div>
 
 <!-- infoページ. -->
@@ -25,7 +28,7 @@
     <div data-role="content">
         <p style="text-align: center">This is Info Page...</p>
     </div>
-
+    <div data-role="footer" data-theme="b" data-position="fixed" style="text-align: center">フッター2</div>
 </div>
 
 </body>
