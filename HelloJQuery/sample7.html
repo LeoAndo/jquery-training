@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>動的なリストアイテムの追加サンプル</title>
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<script>
+    // pageinitイベントフックするより、簡潔にかける.
+    // HTMLの読み込みが全て完了した後によbだされる処理.
+    $(function () {
+            // ボタンのクリックイベントをフックする.
+            $("#calcButton").on("click", function () {
+                let total = 0;
+                alert(total);
+                // inputタグのcheck状態を全て確認する.
+                $("input:checked").each(function (index, element) {
+                    total += parseInt($(element).val());
+                });
+                $("#totalPrice").text(total);
+            });
+        }
+    )
+</script>
+
+<body>
+
+<!-- TOPページ. -->
+<div data-role="page" id="top">
+    <div data-role="content">
+        <div data-role="header">
+            <div class="center">CoCo壱カレーメニューリスト</div>
+        </div>
+        <fieldset data-role="controlgroup">
+            <legend>サラダ</legend>
+            <input type="checkbox" id="sarada1" name="sarada1" value="189"><label for="sarada1">ヤサイサラダ</label>
+            <input type="checkbox" id="sarada2" name="sarada2" value="262"><label for="sarada2">タマゴサラダ</label>
+            <input type="checkbox" id="sarada3" name="sarada3" value="294"><label for="sarada3">コーンサラダ</label>
+        </fieldset>
+        <fieldset data-role="controlgroup">
+            <legend>魚介類のカレー</legend>
+            <input type="checkbox" id="curry1" name="curry1" value="671"><label for="curry1">フィッシュフライカレー</label>
+            <input type="checkbox" id="curry2" name="curry2" value="703"><label for="curry2">たっぷりあさりカレー</label>
+            <input type="checkbox" id="curry3" name="curry3" value="713"><label for="curry3">エビあさりカレー</label>
+        </fieldset>
+        <fieldset data-role="controlgroup" data-type="horizontal">
+            <legend>サイドメニュー</legend>
+            <input type="checkbox" id="side1" name="side1" value="157"><label for="side1">烏龍茶</label>
+            <input type="checkbox" id="side2" name="side2" value="253"><label for="side2">コーンスープ</label>
+        </fieldset>
+        <button id="calcButton" style="margin-top: 30px;">計算</button>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div> 合計金額: <span id="totalPrice">0</span> 円</div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
