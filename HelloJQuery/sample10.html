@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>jQuery Dialogサンプル</title>
+    <title>jQuery Popupサンプル</title>
     <meta name="viewport"
           content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
@@ -24,12 +24,12 @@
 <!-- TOPページ. -->
 <div data-role="page" id="top">
     <div class="ui-content" role="main">
-        <a href="#my-dialog-page" data-transition="pop">Show Dialog</a>
+        <a href="#my-popup" data-rel="popup"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Show Popup</a>
+        <div data-role="popup" id="my-popup">
+            <p>popup Message</p>
+        </div>
     </div>
-</div>
-
-<div data-role="page" data-dialog="true" id="my-dialog-page">
-    <h1>My dialog page</h1>
 </div>
 
 </body>
