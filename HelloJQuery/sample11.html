@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery Popup Theme変更サンプル</title>
+    <meta name="viewport"
+          content="width=device-width, height=device-height, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css"/>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+
+<script>
+    // pageinitイベントフックするより、簡潔にかける.
+    // HTMLの読み込みが全て完了した後に呼び出される処理.
+    $(function () {
+            console.log("HTMLの読み込みが全て完了した後に呼び出される処理.")
+        }
+    )
+</script>
+
+<body>
+
+<!-- TOPページ. -->
+<div data-role="page" id="top">
+    <div class="ui-content" role="main">
+        <a href="#my-popup" data-rel="popup"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Show Custom Theme Popup(a)</a>
+        <a href="#my-popup2" data-rel="popup"
+           class="ui-btn ui-corner-all ui-shadow ui-btn-inline" data-transition="pop">Show Custom Theme Popup(b)</a>
+        <!-- popup-->
+        <div data-role="popup" id="my-popup" data-theme="a">
+            <a href="#" class="ui-btn-right" data-role="button" data-rel="back" data-icon="delete" data-iconpos="notext">閉じる</a>
+            <p class="ui-content">popup Message</p>
+        </div>
+
+        <div data-role="popup" id="my-popup2" data-theme="b">
+            <a href="#" class="ui-btn-left" data-role="button" data-rel="back" data-icon="delete" data-iconpos="notext">閉じる</a>
+            <p class="ui-content">popup Message</p>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
